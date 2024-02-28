@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/styles.css" />
+    <link rel="stylesheet" href="style/convstyles.css" />
+  </head>
+  <body>
+    <div class="parent">
+      <div class="block">
+        <div class="block-left">
+          <div class="chats-line">
+            <div style="padding: 5px">My chats:</div>
+          </div>
+          <div class="contact">
+            <div class="circle-image">
+              <img
+                src="https://sun9-56.userapi.com/impg/UKxZaiXuX3PSsIOWugkKWQdEd3Xtd3iOBx20Yw/Svdw6s16Uao.jpg?size=960x1280&quality=95&sign=680b8a0e4db375c21f8c5fe768186908&type=album"
+              />
+            </div>
+            <div class="name-in-contact">Alexandr Zaytsev</div>
+          </div>
+          <div class="contact">
+            <div class="circle-image">
+              <img
+                src="https://sun9-53.userapi.com/impg/JYpiYXyDuAe1mS-LO79i3DRuxJv38WkyvQX9sQ/t4PdB8FEYvo.jpg?size=1090x1600&quality=95&sign=1168a2a987dbefa3c98845210971a53b&type=album"
+              />
+            </div>
+            <div class="name-in-contact">Sofia Morosh</div>
+          </div>
+          <div class="contact">
+            <div class="circle-image">
+              <img
+                src="https://sun1-84.userapi.com/impg/bUi-vSEFspzHkg812TDo6qisidSkrzv8e0wHZw/c6-4rxREa2M.jpg?size=1200x1600&quality=96&sign=a57f778b571b63c0ae0ac4d2ef146c89&type=album"
+              />
+            </div>
+            <div class="name-in-contact">Anatoly Susov</div>
+          </div>
+        </div>
+        <div class="block-right">
+          <div class="tools-bar">
+            <div style="padding-left: 5px; margin-bottom: -5px">
+              Alexandr Zaytsev
+            </div>
+            <div
+              style="font: italic small-caps 12px/2 cursive; padding-left: 5px"
+            >
+              last seen recently
+            </div>
+            <div class="messages">
+              <div class="message" id = "example-messege">
+                <div class="name-in-massage">Alexandr</div>
+                <div class="message-text">
+                  Hello, how are you?<br />
+                  I'm loving Java Spring Boot<br />
+                  Do you love?<br />
+                </div>
+              </div>
+              <div class="message">
+                <div class="name-in-massage">Ilya</div>
+                <div class="message-text">
+                  Hello, i'm fine<br />
+                  How are you doing<br />
+                  I like JavaScript better.<br />
+                  It's my love ❤️️.<br />
+
+                </div>
+              </div>
+
+            </div>
+            <div class="type-massage-block">
+              <div class="form__group field">
+                <textarea name="Text1" cols="50" rows="5" id="textareaMessege" style="margin-bottom: -20px;">
+
+                </textarea>
+
+                <button class="bubbly-button" id="send-button">send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/ChatHandler.js"></script>
+  </body>
+</html>
