@@ -1,6 +1,6 @@
 'use strict';
 
-let messageInput = document.getElementById("textareaMessege");
+let messageInput = document.getElementById("textareaMessage");
 
 var stompClient = null;
 var username = "Ilya Fedorov";
@@ -12,7 +12,7 @@ var colors = [
 
 function connect(event) {
 
-    if(username) {
+    if (username) {
 
         var socket = new SockJS('/ws');
         stompClient = Stomp.over(socket);
@@ -29,7 +29,7 @@ function onConnected() {
     // Tell your username to the server
     stompClient.send("/app/chat.addUser",
         {},
-        JSON.stringify({sender: username, type: 'JOIN'})
+        JSON.stringify({ sender: username, type: 'JOIN' })
     )
 
 }
@@ -43,7 +43,7 @@ function onError(error) {
 function sendMessage(event) {
     var messageContent = messageInput.value.trim();
 
-    if(messageContent && stompClient) {
+    if (messageContent && stompClient) {
         var chatMessage = {
             sender: username,
             content: messageInput.value,
@@ -59,10 +59,10 @@ function sendMessage(event) {
 function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
 
-    if(message.type === 'JOIN') {
-        
+    if (message.type === 'JOIN') {
+
     } else if (message.type === 'LEAVE') {
-       
+
     } else {
         // messageElement.classList.add('chat-message');
 
@@ -82,6 +82,9 @@ function onMessageReceived(payload) {
         new_element.children[1].innerHTML = message.content;
 
         document.getElementsByClassName("messages")[0].appendChild(new_element);
+        let messegesBar = document.getElementsByClassName("messages")[0]
+        messegesBar.scrollTo(0, messegesBar.scrollHeight);
+
         console.log("Messege recieved!");
     }
 
@@ -93,3 +96,12 @@ connect();
 let buttonSend = document.getElementById("send-button")
 
 buttonSend.addEventListener('click', sendMessage, true)
+
+
+
+document.addEventListener('keyup', function (event) {
+    if (event.key === "Enter" && event.ctrlKey) {
+        sendMessage();
+    }
+})
+
